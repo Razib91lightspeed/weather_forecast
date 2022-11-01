@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather data</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
+</head>
+
+
+<h1>Course Assignment : Weather Data</h1>
+
+
+<!--buttion option-->  
+<div>
+    <div class="tab">
+    <button class="tabConnect active" onclick="openTab(event, 'page1')">Latest measuremnts</button>
+    <button class="tabConnect" onclick="openTab(event, 'page2')">Wind Speed</button>
+    <button class="tabConnect" onclick="openTab(event, 'page3')">Light</button>
+    <button class="tabConnect" onclick="openTab(event, 'page4')"> Info</button>
+    <button class="tabConnect" onclick="openTab(event, 'page5')">Other Measurements</button>
+</div>
+
+<!--Page 1 layout-->
+<div id="page1" class="tabView active">
+    <h2> Fatched weather data</h2>
+    <div id="page1Content"></div>
+</div>
+
+<!--Page 2 layout-->
+<div id="page2" class="tabView" style="display: none;">
+    <h2>Latest Wind Speeds measuremments</h2>
+   
+    <!-- Page 2 drop down menu-->
+    <select onChange="changeInterval(event, 'wind_speed')">
+        <option value="now" selected>Now</option>
+        <option value="23">24 hours</option>
+        <option value="47">48 hours</option>
+        <option value="71">72 hours</option>
+        <option value="167">1 week</option>
+      </select>
+
+    <div>
+        <div class="tableContent" id="page2Content"></div>
+        <div class="chartcontent" style="position: relative;">
+        <canvas id="windSpeedChart" height="400px"></canvas>
+    </div>
+</div>
+</div>
+
+
+<!--Page 3 layout-->
+<div id="page3" class="tabView" style="display: none;">
+    <h2>Latest light measuremments</h2>
+
+<!--Page 3 drop down menu-->
+<select onChange="changeInterval(event, 'light')">
+    <option value="now" selected>Now</option>
+    <option value="23">24 hours</option>
+    <option value="47">48 hours</option>
+    <option value="71">72 hours</option>
+    <option value="167">1 week</option>
+  </select>
+
+    <div>
+        <div class="tableContent" id="page3Content"></div>
+        <div class="chartcontent">
+        <canvas id="lightsChart"></canvas>
+        </div>
+    </div>
+</div>    
+
+<!--Page 44 layout-->
+<div id="page4" class="tabView" style="display: none;">
+<h2>Contact Info</h2>    
+
+<div id="page4Content">
+    <img src="razib1.png" width="500" height="400">
+    <p>Me outing in amazing autumn</p>
+    <p>Name: Razib Hasan</p>
+    <p>Phone: +358407692735</p>
+    <p>Email: razibulhasan2003@gmail.com</p>
+    <p>A Software Enthusiastic Personal</p>
+    <p>Social media: https://www.linkedin.com/in/razibhasan2/</p>
+    <p>Tampere University Of Applied Sciences</p>
+     <p>Tampere, Finland</p>
+    
+  
+</div>
+</div>
+
+<!--Page 5 layout-->
+<div id="page5" class="tabView" style="display: none;">
+    <h2>Select data type</h2>
+
+
+     <!--Page 5 drop down menu for data type -->
+ <select onChange="changeInterval(event, 'rain','wind_speed','wind_direction','light','temperature')">
+    <option type="Select type" selected>Select type</option>
+    <option value="now">rain</option>
+    <option value="23">wind_speed</option>
+    <option value="47">wind_direction</option>
+    <option value="71">light</option>
+    <option value="167">temperature</option>
+  </select>  
+
+ <!--Page 5 drop down menu -->
+<select onChange="changeInterval(event, 'rain','wind_speed','wind_direction','light','temperature')">
+    <option type="Select time" selected>Select time</option>
+    <option value="now">Now</option>
+    <option value="23">24 hours</option>
+    <option value="47">48 hours</option>
+    <option value="71">72 hours</option>
+    <option value="167">1 week</option>
+  </select>  
+
+    <div>
+        <div class="tableContent" id="page5Content"></div>
+        <div class="chartcontent" style="position: relative;">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+    <script src="./script.js"></script>
+  </body>
+</html>
